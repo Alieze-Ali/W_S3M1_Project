@@ -55,9 +55,41 @@
     // 🧠 Planes have a `down` method, which takes a number of meters as its argument.
     // 🧠 Calling `down` changes the `altitude` prop appropriately and returns the updated `altitude`.
     // 🧠 If calling `down` would cause the plane to go below altitude zero, `altitude` is set to 0 and the string "CRASH!" is returned.
+    // Step 1: Instantiate a new plane with a string for a model name after the class
+    // Step 2: Add constructor, pass desiredModel parameter
+    // Step 3: add model prop to constructor set to desiredModel
+    // Step 4: add altitude prop to constructor set to 0
+    // Step 5: add up method : 
+      // a: pass number of meters argument
+      // b: increase altitude by numOfMeters
+      // c: return altitude
+    // Step 6: add a down method
+      // a: pass number of meters argument
+      // b: add logic: if altitude - numOfMeters < 0 : return 'CRASH!'
+      // c: else subtract numOfMeters from altitude : return altitude
     class AirPlane {
+      constructor(desiredModel){
+        this.model = desiredModel;
+        this.altitude = 0;
+      }
+      up (numOfMeters){
+        this.altitude += numOfMeters;
+        return this.altitude;
+      }
+      down (numOfMeters) {
+        if (this.altitude - numOfMeters < 0){
+          this.altitude = 0;
+          return 'CRASH!';
+        } else {
+          this.altitude -= numOfMeters;
+          return this.altitude; 
+        }
+      }
 
     }
+    const boeing = new AirPlane ('boeing');
+    // not sure why I can't run boeing.up(10) in the console : returning NaN
+    // I'll watch the solution and follow up but I don't think I can do anymore tonight
 
     // 👉 CHALLENGE 3
     // 🧠 Build a Bulb class.
