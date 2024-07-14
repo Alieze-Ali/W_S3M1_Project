@@ -6,14 +6,14 @@
 </head>
 
 <body>
-  <h1>Advanced Objects</h1>
+  <h1>Advanced Objects Mod Project</h1>
   <p>Please load this file in VSCode and Chrome, and open the Console in Chrome Dev Tools.</p>
   <p>Work through the challenges found inside the script tag in this document,
     until the Console reports all tests passing.</p>
 
   <script>
     // In CHALLENGES 1-4 you will flesh out some classes.
-
+    console.log('Hello World!')
     // To do this, translate each 🧠 set of instructions into a working class.
     // ❗ Classes are scaffolded for you.
     // ❗ Watch the Guided Project to learn proper debugging technique.
@@ -24,9 +24,27 @@
     // 🧠 The new person will have a `name` prop initialised to the desired name, and an `age` prop initialised to 0.
     // 🧠 The person also has an `ageGracefully` method, which increases `age` by 1 each time it's called.
     // 🧠 But there's a catch: once `age` reaches 12, the `ageGracefully` method will have no effect.
+    // Step 1: Add a constructor fuction to build objects 
+    // Step 2: Instantiate a new person using the class with the name of the person as a string
+    // Step 3: Pass properties withing the constructor
+      // name = desired name
+      // age = 0
+    // Step 4: Add functionality method ageGracefully
+    // Step 5: add if statement conditional logic
+      // a: if this age is < 12 : return this age + 1
     class PeterPan {
-
+      constructor(desiredName) {
+        this.name = desiredName;
+        this.age = 0;
+      }
+      ageGracefully(){
+        if(this.age < 12) {
+          this.age += 1; 
+        }
+      }
     }
+    const leo = new PeterPan ('Leo')
+    const johnny = new PeterPan ('Johnny')
 
     // 👉 CHALLENGE 2
     // 🧠 Build an AirPlane class. This class allows to instantiate airplanes.
