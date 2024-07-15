@@ -88,8 +88,8 @@
 
     }
     const boeing = new AirPlane ('boeing');
-    // not sure why I can't run boeing.up(10) in the console : returning NaN
-    // I'll watch the solution and follow up but I don't think I can do anymore tonight
+    // *******not sure why I can't run boeing.up(10) in the console : returning NaN
+    // *******I'll watch the solution and follow up but I don't think I can do anymore tonight
 
     // 👉 CHALLENGE 3
     // 🧠 Build a Bulb class.
@@ -97,9 +97,37 @@
     // 🧠 The initial value of `isOn` will be the Boolean false.
     // 🧠 The methods work as one might expect, changing the value of `isOn` to the appropriate Boolean.
     // 🧠 The methods also return one of these two strings: "You turned the bulb ON", or "You turned the bulb OFF".
+    // Step 1: add constructor function
+    // Step 2: add isOn prop to the constructor - set to false
+    // Step 3: add turnOn method
+      // a: set isOn to true
+      // b: return "You turned the bulb On"
+    // Step 4: add turnOff method
+      // a: set isOn to false
+      // b: return "You turned the bulb OFF"
+    // Step 5: add toggle method
+      // a: switch the value of this.isOn to the opposite of it's current value
+      // b: add tertiary return of 'You turned the bulb On' or 'Yu turned the bulb OFF'
     class Bulb {
-
+      constructor (isOn) {
+        this.isOn = false;
+      }
+      turnOn () {
+        this.isOn = true;
+          return "You turned the bulb ON"
+        }
+      
+      turnOff () {
+        this.isOn = false;
+        return "You turned the bulb OFF"
+        }
+  
+      toggle () {
+        this.isOn = !this.isOn;
+          return this.isOn ? "You turned the bulb ON" : "You turned the bulb OFF"
+      }
     }
+   
 
     // 👉 CHALLENGE 4
     // 🧠 Build a CountDown class that can count down starting at any number we pass to the constructor.
@@ -115,9 +143,31 @@
     //   minusThree.count() // returns "Liftoff!"
     //   minusThree.count() // returns null
     //   minusThree.count() // returns null
+    // Step 1: add constructor function
+    // Step 2: add num property set it to num
+    // Step 3: add count method
+    // Step 4: add conditional logic
+      // a: if num > 0 : return num decremented dynamically
+      // b: else if num === 0 : decrement num
+      // c: return "Liftoff!"
+      // d: else return null
+  
     class CountDown {
-
+      constructor(num) {
+        this.num = num;
+      }
+      count () {
+        if (this.num > 0) {
+          return `${this.num--}!`
+        } else if (this.num === 0) {
+          this.num--;
+          return "Liftoff!";
+      } else {
+        return null;
+      }
     }
+  }
+    
 
     // 🧪 TESTS, do not work below this line
     // 🧪 TESTS, do not work below this line
